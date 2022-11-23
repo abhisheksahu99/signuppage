@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DataDetailComponent } from './sign-up/data-detail/data-detail.component';
 import { DetailComponent } from './sign-up/detail111/detail.component';
 import { ListComponent } from './sign-up/list/list.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 // import { AboutCompanyComponent } from './about-company/about-company.component';
 // import { AboutMeComponent } from './about-me/about-me.component';
@@ -46,6 +46,15 @@ const routes: Routes = [
   {
     path:'list',
     component:ListComponent,
+    children:[{
+      path:'data',
+      component:DataDetailComponent,
+     
+    }]
+  },
+  {
+    path:'data',
+    component:DataDetailComponent,
   },
   {
     path:'detail22',
@@ -55,7 +64,6 @@ const routes: Routes = [
     path:'**',
     component:UserLoginComponent,
   },
-  
 ];
 
 @NgModule({
