@@ -1,0 +1,36 @@
+<a class="id" routerLink="detail22">details</a>
+<br><br> <br>
+<h1 style="text-align: center; background-color: aqua; width: 60%; margin: 0 230px;">Create your account</h1>
+
+<form #fom [formGroup]="formvalid" (ngSubmit)="formlogin()" >
+    <h1>First name *</h1>
+    <input *ngIf="disable" class="one" type="text" name="first" placeholder="Enter First name" formControlName="first">
+    <span style="color: red;" *ngIf="first && first.touched && first.invalid">Enter minumim 2 character</span>
+
+    <h1>Last name *</h1>
+    <input *ngIf="disable" type="text" name="last" placeholder="Enter Last name" formControlName="last">
+    <span style="color: red;" *ngIf="last && last.touched && last.invalid">Enter minumim 2 character</span>
+    <br />
+
+    <h1>Contact number *</h1>
+    <input *ngIf="disable" type="text" name="contact " placeholder="0-1" formControlName="contact">
+    <span style="color: red;" *ngIf="contact && contact.touched && contact.invalid">Please enter phone number</span>
+    <br>
+
+    <h1>Email id *</h1>
+    <input *ngIf="disable" type="text" name="email" placeholder="@email.com" formControlName="email">
+    <span style="color: red;" *ngIf="email && email.touched && email.invalid ">Enter correct email</span>
+    <br />
+
+    <h1>Password *</h1>
+    <input *ngIf="disable" type="text" name="password" placeholder="Enter password" formControlName="password">
+    <span style="color: red;" *ngIf="password && password.touched && password.invalid">password should be atleast 8 character</span>
+    <br /> <br />
+
+    <button type="submit" routerLink="list" [disabled]=formvalid.invalid >Sign up</button>
+    <button (click)="clear(fom)" [disabled]=!formvalid>back</button>
+    <br><router-outlet></router-outlet>
+    <br>
+</form>
+<router-outlet></router-outlet>
+

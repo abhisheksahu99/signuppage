@@ -1,0 +1,128 @@
+<!-- <h1>routing</h1>
+<br>
+
+<a routerLink="">Home</a>
+<br /> <br />
+<a routerLink="about">About</a>
+<br /> <br />
+<a routerLink="user">User</a>
+<br /> <br />
+<a routerLink="no-page">no-page</a>
+<br /> <br />
+
+<a routerLink="user/10">abhi</a>
+<br /> <br />
+<a routerLink="user/20">saksham</a>
+<br /> <br />
+<a routerLink="user/30">abhay</a>
+<br /> <br />
+<a routerLink="user/40">ansh</a>
+<br /> <br />
+
+<router-outlet></router-outlet>
+
+<app-about [myInput]="inputString" (myOutput)="getData($event)"></app-about>
+<br><br>
+<input type="text" #val  [(ngModel)]="inputString"  [disabled]=disable >
+<button #dis (click)="myput(val)">click me</button>
+
+<h1>{{inputString}}</h1>
+<h1 *ngFor="let user of details">user data is :{{user}}</h1>
+<button disable=!disable (click)="myput(disable)">click</button>
+<h2 *ngFor="let item of userdetailes">{{item.name}}--{{item.email}}--{{item.phone}}</h2>
+
+<br />
+<br />
+
+<button (click)="counter('add')">++</button>
+<br>
+<h1>{{count}}</h1>
+
+<button (click)="counter('minus')">--</button>
+
+
+
+<h1 *ngIf="show==='123'; then if1 then if2  else else1">chai gram hai to piyo</h1>
+
+<ng-template #if2>
+    <h1>chai tandi piyoge ya nhi</h1>
+</ng-template>
+<ng-template #if1>
+    <h1>chai tandi ho ya garam peeene to hai</h1>
+</ng-template>
+<ng-template #else1>
+    <h1>chai gram nhi hai to mat piyo</h1>
+</ng-template> 
+<button  (click)="changecolor(show) ">change</button>
+<button (click)="disable=!disable">submit</button>
+
+
+<ng-template *ngIf="disable" [ngIf]="color==='red'">
+    <h1 style="color: red;">mere color lal hai to lal dhekao</h1>
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+    <h1 style="color: blue;">mere color lal hai to lal dhekao</h1>
+</ng-template>
+<ng-template [ngIf]="color==='green'">
+    <h1 style="color: green;">mere color lal hai to lal dhekao</h1>
+</ng-template>
+
+<div [ngSwitch]="color2">
+    <h1 *ngSwitchCase="'green'" style="color: blue;">color is blue </h1>
+    <h1 *ngSwitchCase="'pink'" style="color: rgb(217, 0, 255);">color is blue </h1>
+    <h1 *ngSwitchCase="'red'" style="color: rgb(255, 0, 0);">color is blue </h1>
+    <h1 *ngSwitchCase="'sky'" style="color: rgb(0, 166, 255);">color is blue </h1>
+    <h1 *ngSwitchCase="'sky blue'" style="color: rgb(0, 255, 162);">color is blue </h1>
+    <h1 *ngSwitchCase="'green'" style="color: rgb(119, 255, 0);">color is blue </h1>
+    <h1 *ngSwitchCase="'dark green'" style="color: rgb(9, 255, 0);">color is blue </h1>
+    <h1 *ngSwitchCase="'orange'" style="color: rgb(255, 77, 0);">color is blue </h1>
+    <h1 *ngSwitchCase="'yellow'" style="color: rgb(221, 255, 0);">color is blue </h1>
+    <h1 *ngSwitchCase="'orange'" style="color: rgb(255, 149, 0);">color is blue </h1>
+</div>
+
+<ul *ngFor="let data of forloop">
+    <li>{{data}}</li>
+</ul>
+
+<ul *ngFor="let data of loosssp">
+    <li>{{data.name}}</li>
+    <ul *ngFor="let dataq of loosssp.socialAccou">
+    <li>{{dataq}}</li>
+   </ul> -->
+<!-- </ul> -->
+<!-- <h1 [style.color]="color5" [style.backgroundColor]="bgcolor" *ngIf="color4" >style binding</h1>
+<button (click)="color4=!color4">hide color</button>
+<button (click)="updateColor()">change color</button>
+<button (click)="updateColor2()">change color</button>
+
+
+<form #basicForm="ngForm" (ngSubmit)="submitData(basicForm.value)">
+<input type="text" ngModel name="user" placeholder="enter user name">
+<br /><br />
+<input type="text" ngModel name="email" placeholder="enter user email">
+<br /><br />
+<input type="text" ngModel name="password" placeholder="enter user password">
+<br /><br />
+<button>submit</button>
+</form>
+<ul>
+    <li>{{data1.user}}</li>
+    <li>{{data1.email}}</li>
+    <li>{{data1.password}}</li>
+</ul> -->
+
+<!-- <app-list-page></app-list-page> -->
+<!-- <app-sign-up ></app-sign-up> -->
+<!-- <app-detail-page></app-detail-page> -->
+<!-- <a routerLink="detail">Page Detail</a> -->
+<!-- <app-user-login></app-user-login> -->
+<!-- <app-sign-up></app-sign-up> -->
+<div class="container">
+    <!-- <a class="id" routerLink="list">About</a>
+        <a class="id" routerLink="detail22">details</a> -->
+        <a class="id" routerLink="">Home</a>
+    <router-outlet></router-outlet>
+</div>
+
+
+
