@@ -5,7 +5,6 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
 import { DetailComponent } from './detail111/detail.component';
 import { ListComponent } from './list/list.component';
 import { SignUpComponent } from './sign-up.component';
-import { HeaderComponent } from './detail111/header/header.component';
 import { HttpClientModule} from '@angular/common/http'
 
 
@@ -15,7 +14,6 @@ import { HttpClientModule} from '@angular/common/http'
     DetailComponent,
     ListComponent,
     SignUpComponent,
-    HeaderComponent
   ],
   imports: [
     CommonModule,

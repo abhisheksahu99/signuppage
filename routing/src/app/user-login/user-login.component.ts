@@ -8,9 +8,12 @@ import { FormGroup ,FormControl , Validators } from '@angular/forms';
 })
 export class UserLoginComponent implements OnInit {
   disable=true;
+  validcharter="valid";
+  minumcharter="minium";
+  ['requried']=true;
   myId: string | null | undefined;
   formvalid = new FormGroup ({
-    first:new FormControl('',[Validators.required,Validators.minLength(1),Validators.max(15),Validators.pattern('[a-z A-Z]+$')]),
+    first:new FormControl('',[Validators.required,Validators.minLength(6),Validators.max(15),Validators.pattern('[a-z A-Z]+$')]),
     last:new FormControl('',[Validators.required,Validators.min(2),Validators.maxLength(20),Validators.pattern('[a-zA-Z @.]+$')]),
     contact:new FormControl('',[Validators.required,Validators.pattern('[0-9]+$'),Validators.maxLength(10)]),
     email:new FormControl('',[Validators.required,Validators.email,Validators.pattern('[a-zA-Z @.]+$') ]),
@@ -33,6 +36,8 @@ export class UserLoginComponent implements OnInit {
  }
  display(): void{
  }
+ get form() { return this.formvalid.controls; }
+
  get first(){
    return this.formvalid.get('first')
  }
@@ -52,5 +57,6 @@ export class UserLoginComponent implements OnInit {
    console.log(formvalid=this.clear)
    
  }
+
 
 }

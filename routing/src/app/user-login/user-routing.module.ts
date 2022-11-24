@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLoginComponent } from './user-login.component';
 
-const newLocal = 'user-login';
 const routes: Routes = [
   {
     path:'**',

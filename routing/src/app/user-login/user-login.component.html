@@ -1,32 +1,42 @@
 <form class="di row g-3 col-6" [formGroup]="formvalid" (ngSubmit)="formlogin()">
     <h3>Create Your Account</h3>
-    <div class="col-md-6">
-      <label for="inputname" class="form-label">First Name *</label>
-      <input type="text" class="form-control" id="inputname" placeholder="Enter Last name" formControlName="first">
-      <span style="color: red;" *ngIf="first && first.touched && first.dirty && first.invalid">User name is requried </span>
-    </div>
-    <div class="col-md-6">
-      <label for="inputlastname" class="form-label">Last Name *</label>
-      <input type="text" class="form-control" id="inputlastname" placeholder="Enter First name" formControlName="last">
+    <div class="col-md-5">
+      <label for="inputname" class="form-label">First Name <span style="color: red;">*</span></label>
+      <input type="text" class="form-control" id="first" placeholder="Enter first name" formControlName="first">
+      <div *ngIf="(form.first.dirty || form.first.touched)" class="invalid-feedback">
+        <h1>hello</h1>
+        <div *ngIf="form.first.errors?.['required']">
+          This field is required.
+        </div>
+        <div *ngIf="form.first.errors?.['minlength']">
+          This field must have at least 1 character.
+        </div>
+        <div *ngIf="form.first.errors?.['maxlength']">
+          This field must have at most 250 characters.
+        </div>
+      </div>
+      </div>
+    <div class="col-md-5">
+      <label for="inputlastname" class="form-label">Last Name <span style="color: red;">*</span></label>
+      <input type="text" class="form-control" id="inputlastname" placeholder="Enter last name" formControlName="last">
       <span style="color: red;" *ngIf="last && last.touched && last.dirty && last.invalid">Last name is requried</span>
     </div>
-    <div class="col-12">
-      <label for="inputNumber" class="form-label">Contact number *</label>
+    <div class="col-10">
+      <label for="inputNumber" class="form-label">Contact number <span style="color: red;">*</span></label>
       <input type="contact" class="form-control" id="inputNumber" placeholder="e.g+32 484766130" formControlName="contact">
       <span style="color: red;" *ngIf="contact && contact.touched && contact.dirty &&contact.invalid">Please enter phone number</span>
 
     </div>
-    <div class="col-12">
-      <label for="inputEmail" class="form-label">Email ID *</label>
+    <div class="col-10">
+      <label for="inputEmail" class="form-label">Email ID <span style="color: red;">*</span></label>
       <input type="email" class="form-control" id="inputEmail" placeholder="Enter email here" formControlName="email">
       <span style="color: red;" *ngIf="email && email.touched && email.dirty && email.invalid ">Enter correct email</span>
 
     </div>
-    <div class="col-12">
-        <label for="inputPassword" class="form-label">Password *</label>
+    <div class="col-10">
+        <label for="inputPassword" class="form-label">Password <span style="color: red;">*</span></label>
         <input type="password" class="form-control" id="inputPassword" placeholder="Enter password here" formControlName="password">
        <span style="color: red;" *ngIf="password && password.dirty && password.touched && password.invalid">password should be atleast 6 character</span>
-
       </div>
     <!-- <div class="col-12">
       <div class="form-check">
@@ -36,9 +46,18 @@
         </label>
       </div>
     </div> -->
-    <div class="col-12">
+    <div class="col-10">
       <button [disabled]="formvalid.invalid" routerLink="list" type="submit" class="btn btn-primary col-12">Sign in</button>
     </div>
   </form>
   <h1>{{myId}}</h1>
 
+
+  <!-- <div class="text-red-500 mb-3" *ngIf="signinForm.controls['password'].hasError('passwordStrength') || signinForm.controls['password'].hasError('minlength')">
+    <span>Password must have lower case, upper case, numeric characters and 8 digits long.</span>
+  </div>
+  <div class="text-red-500 mb-3" *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched">Please enter password</div>
+  <div class="flex align-items-center justify-content-between mb-5">
+    <div class="flex align-items-center"></div>
+    <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)" [routerLink]="['/auth/forgot-password']">Forgot password?</a>
+  </div> -->

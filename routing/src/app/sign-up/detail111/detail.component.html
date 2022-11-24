@@ -1,27 +1,8 @@
-<!-- <app-header></app-header> -->
-<!-- <div>
-    <h4>Name :</h4>
-    <h4>Mobile Number</h4>
-    <h4>Status</h4>
-    <h4>User Created</h4>
-</div> -->
-<!-- <router-outlet></router-outlet> -->
-
-
-<!-- <h2 >
-    <h1>Id:{{item.id}}</h1>
-    <h1>Id:{{item.name}}</h1>
-    <h1>Id:{{item.id}}</h1>
-    <h1>Id:{{item.id}}</h1>
-    <h1>Id:{{item.id}}</h1>
-    <h1>Id:{{item.id}}</h1>
-   Id:{{item.id}} ---- Name: {{item.name}} ---- {{item.username}}
-</h2> -->
-<ul *ngFor="let item of users">
-    <li>Id :{{item.id}}</li>
-    <li>Name :{{item.name}}</li>
-    <li>User Name :{{item.username}}</li>
-    <li>Email :{{item.email}}</li>
-    <li>Phone :{{item.phone}}</li>
+<ul >
+    <li>Id :{{users?.id}}</li>
+    <li>Name :{{users?.name}}</li>
+    <li>User Name :{{users?.username}}</li>
+    <li>Email :{{users?.email}}</li>
+    <li>Phone :{{users?.phone}}</li>
 </ul>
-<app-header></app-header>
+<!-- <app-header></app-header> -->

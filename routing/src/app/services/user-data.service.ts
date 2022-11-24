@@ -6,10 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserDataService {
    url = "http://dummy.restapiexample.com/api/v1/employees";
-   url2 = "https://jsonplaceholder.typicode.com/users";
+   url2 = "https://jsonplaceholder.typicode.com/users/";
   constructor(private http:HttpClient) { }
-  users()
+  getAllUsers()
   {
     return this.http.get(this.url2)
+  }
+  getUser(id:number)
+  {
+
+    return this.http.get(this.url2+id)
   }
 }

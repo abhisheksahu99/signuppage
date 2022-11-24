@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserDataService } from 'src/app/services/user-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -10,17 +11,23 @@ import { UserDataService } from 'src/app/services/user-data.service';
 export class DetailComponent implements OnInit {
   
   users:any;
-  constructor(userData:UserDataService)
+  constructor(private userData:UserDataService,private router:ActivatedRoute)
   {
-  userData.users().subscribe((data)=>{
-    console.warn("data",data);
-    this.users=data
-  })
+    this.router.params.subscribe((params: any) => {
+      // this.userDetail(params?.id);
+      console.log(params?.id)
+      this.getUser(params?.id)
+    });
   }
   ngOnInit(): void {
     
   }
-
+  getUser(id:number){
+    this.userData.getUser(id).subscribe((data)=>{
+      console.warn("data",data);
+      this.users=data
+    })
+  }
   
 
 }
