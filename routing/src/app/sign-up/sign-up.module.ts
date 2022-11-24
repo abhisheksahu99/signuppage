@@ -5,7 +5,9 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
 import { DetailComponent } from './detail111/detail.component';
 import { ListComponent } from './list/list.component';
 import { SignUpComponent } from './sign-up.component';
-import { DataDetailComponent } from './data-detail/data-detail.component';
+import { HeaderComponent } from './detail111/header/header.component';
+import { HttpClientModule} from '@angular/common/http'
+
 
 
 @NgModule({
@@ -13,7 +15,7 @@ import { DataDetailComponent } from './data-detail/data-detail.component';
     DetailComponent,
     ListComponent,
     SignUpComponent,
-    DataDetailComponent
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -22,8 +24,9 @@ import { DataDetailComponent } from './data-detail/data-detail.component';
   exports:[
     DetailComponent,
     ListComponent,
+    DetailComponent,
+    HttpClientModule,
     SignUpComponent,
-    DataDetailComponent,
   ]
 })
 export class SignUpModule { }

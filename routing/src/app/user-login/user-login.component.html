@@ -1,38 +1,44 @@
-<a class="id" routerLink="detail22">details</a>
-<a class="id" routerLink="data">data</a>
+<form class="di row g-3 col-6" [formGroup]="formvalid" (ngSubmit)="formlogin()">
+    <h3>Create Your Account</h3>
+    <div class="col-md-6">
+      <label for="inputname" class="form-label">First Name *</label>
+      <input type="text" class="form-control" id="inputname" placeholder="Enter Last name" formControlName="first">
+      <span style="color: red;" *ngIf="first && first.touched && first.dirty && first.invalid">User name is requried </span>
+    </div>
+    <div class="col-md-6">
+      <label for="inputlastname" class="form-label">Last Name *</label>
+      <input type="text" class="form-control" id="inputlastname" placeholder="Enter First name" formControlName="last">
+      <span style="color: red;" *ngIf="last && last.touched && last.dirty && last.invalid">Last name is requried</span>
+    </div>
+    <div class="col-12">
+      <label for="inputNumber" class="form-label">Contact number *</label>
+      <input type="contact" class="form-control" id="inputNumber" placeholder="e.g+32 484766130" formControlName="contact">
+      <span style="color: red;" *ngIf="contact && contact.touched && contact.dirty &&contact.invalid">Please enter phone number</span>
 
-<br><br> <br>
-<h1 style="text-align: center; background-color: aqua; width: 60%; margin: 0 230px;">Create your account</h1>
+    </div>
+    <div class="col-12">
+      <label for="inputEmail" class="form-label">Email ID *</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Enter email here" formControlName="email">
+      <span style="color: red;" *ngIf="email && email.touched && email.dirty && email.invalid ">Enter correct email</span>
 
-<form #fom [formGroup]="formvalid" (ngSubmit)="formlogin()" >
-    <h1>First name *</h1>
-    <input *ngIf="disable" class="one" type="text" name="first" placeholder="Enter First name" formControlName="first">
-    <span style="color: red;" *ngIf="first && first.touched && first.invalid">Enter minumim 2 character</span>
+    </div>
+    <div class="col-12">
+        <label for="inputPassword" class="form-label">Password *</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Enter password here" formControlName="password">
+       <span style="color: red;" *ngIf="password && password.dirty && password.touched && password.invalid">password should be atleast 6 character</span>
 
-    <h1>Last name *</h1>
-    <input *ngIf="disable" type="text" name="last" placeholder="Enter Last name" formControlName="last">
-    <span style="color: red;" *ngIf="last && last.touched && last.invalid">Enter minumim 2 character</span>
-    <br />
-
-    <h1>Contact number *</h1>
-    <input *ngIf="disable" type="text" name="contact " placeholder="0-1" formControlName="contact">
-    <span style="color: red;" *ngIf="contact && contact.touched && contact.invalid">Please enter phone number</span>
-    <br>
-
-    <h1>Email id *</h1>
-    <input *ngIf="disable" type="text" name="email" placeholder="@email.com" formControlName="email">
-    <span style="color: red;" *ngIf="email && email.touched && email.invalid ">Enter correct email</span>
-    <br />
-
-    <h1>Password *</h1>
-    <input *ngIf="disable" type="text" name="password" placeholder="Enter password" formControlName="password">
-    <span style="color: red;" *ngIf="password && password.touched && password.invalid">password should be atleast 8 character</span>
-    <br /> <br />
-
-    <button type="submit" routerLink="list" [disabled]=formvalid.invalid >Sign up</button>
-    <button (click)="clear(fom)" [disabled]=!formvalid>back</button>
-    <br><router-outlet></router-outlet>
-    <br>
-</form>
-<router-outlet></router-outlet>
+      </div>
+    <!-- <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div> -->
+    <div class="col-12">
+      <button [disabled]="formvalid.invalid" routerLink="list" type="submit" class="btn btn-primary col-12">Sign in</button>
+    </div>
+  </form>
+  <h1>{{myId}}</h1>
 

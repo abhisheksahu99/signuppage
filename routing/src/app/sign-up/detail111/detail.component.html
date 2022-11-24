@@ -1,7 +1,27 @@
-<h3 *ngFor="let data of item1" >Name : {{data.name}} </h3>
-<h3 *ngFor="let data of item1" >email : {{data.email}} </h3>
-<h3 *ngFor="let data of item1" >status : {{data.status}} </h3>
-<h3 *ngFor="let data of item1" >Number : {{data.number}} </h3>
-<h3 *ngFor="let data of item1" >Group : {{data.group}} </h3>
+<!-- <app-header></app-header> -->
+<!-- <div>
+    <h4>Name :</h4>
+    <h4>Mobile Number</h4>
+    <h4>Status</h4>
+    <h4>User Created</h4>
+</div> -->
+<!-- <router-outlet></router-outlet> -->
 
 
+<!-- <h2 >
+    <h1>Id:{{item.id}}</h1>
+    <h1>Id:{{item.name}}</h1>
+    <h1>Id:{{item.id}}</h1>
+    <h1>Id:{{item.id}}</h1>
+    <h1>Id:{{item.id}}</h1>
+    <h1>Id:{{item.id}}</h1>
+   Id:{{item.id}} ---- Name: {{item.name}} ---- {{item.username}}
+</h2> -->
+<ul *ngFor="let item of users">
+    <li>Id :{{item.id}}</li>
+    <li>Name :{{item.name}}</li>
+    <li>User Name :{{item.username}}</li>
+    <li>Email :{{item.email}}</li>
+    <li>Phone :{{item.phone}}</li>
+</ul>
+<app-header></app-header>

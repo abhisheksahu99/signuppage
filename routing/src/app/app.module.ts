@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserLoginModule } from './user-login/user-login.module';
 import { userRoutingModule } from './user-login/user-routing.module';
+import {HttpClientModule} from '@angular/common/http'
 import { SignUpModule } from './sign-up/sign-up.module';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SignUpModule } from './sign-up/sign-up.module';
     ReactiveFormsModule,
     FormsModule,
     userRoutingModule,
-    SignUpModule
+    SignUpModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-detail',
@@ -6,14 +8,19 @@ import { Component, OnInit ,Input} from '@angular/core';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  @Input()
   
-  item1:any=[
-    {name:'Abhishek',number:'7012563586',status:'Intern',email:'Abhishek@gamil.com',group:'Devloper'}
-  ];
-  constructor() { }
-
-  ngOnInit(): void {
+  users:any;
+  constructor(userData:UserDataService)
+  {
+  userData.users().subscribe((data)=>{
+    console.warn("data",data);
+    this.users=data
+  })
   }
+  ngOnInit(): void {
+    
+  }
+
+  
 
 }

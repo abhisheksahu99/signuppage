@@ -8,7 +8,7 @@ import { FormGroup ,FormControl , Validators } from '@angular/forms';
 })
 export class UserLoginComponent implements OnInit {
   disable=true;
-  myId:any='data';
+  myId: string | null | undefined;
   formvalid = new FormGroup ({
     first:new FormControl('',[Validators.required,Validators.minLength(1),Validators.max(15),Validators.pattern('[a-z A-Z]+$')]),
     last:new FormControl('',[Validators.required,Validators.min(2),Validators.maxLength(20),Validators.pattern('[a-zA-Z @.]+$')]),
