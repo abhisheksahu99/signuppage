@@ -5,7 +5,7 @@
         <td>Name</td>
         <td>Age</td>
         <td>SALARY</td>
-        <td><a router>Details</a></td>
+        <td ><a [routerLink]="['/list/id' ]">Details</a></td>
     </tr>
     <tr>
         <td>1</td>
@@ -33,6 +33,6 @@
         <td>JKL</td>
         <td>23</td>
         <td>1234</td>
-        <td><a routerLink="/detail">view</a></td>
+        <td><a [routerLink]="['/list/' +4]">view</a></td>
     </tr>
 </table>

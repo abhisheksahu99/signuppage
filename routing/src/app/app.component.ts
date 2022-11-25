@@ -15,10 +15,10 @@ export class AppComponent implements OnInit {
   
   }
   ngOnInit(): void {
-    this.http.get(this.apiUrl).subscribe((data)=>{
-      console.warn(data)
-      this.apiData=data
-    })
+    // this.http.get(this.apiUrl).subscribe((data)=>{
+    //   console.warn(data)
+    //   this.apiData=data
+    // })
   }
   
   title = 'routing';

@@ -23,3 +23,40 @@ table, th, td {
  .btn{
    height: 50px;
  }
+ .header{
+  display: flex;
+ }
+button{
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.nav{
+  gap: 6px;
+}
+.box{
+  margin: 5px 4px;
+  border-radius: 6px;
+  border: 2px solid rgb(220, 220, 220);
+  text-align: center;
+}
+.bi{
+  background-color: rgb(6, 160, 255);  
+}
+.col-2{
+  border-radius: 32px;
+  background-color: rgb(195, 193, 193);
+}
+button{
+  background-color: aliceblue;
+  color: black;
+  width: 10px;
+}
+.si{
+  border: 1px;
+  background: white;
+  font-size: larger;
+  font-weight: bold;
+}

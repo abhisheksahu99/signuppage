@@ -11,13 +11,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetailComponent implements OnInit {
   
   users:any;
+  User:any;
   constructor(private userData:UserDataService,private router:ActivatedRoute)
   {
-    this.router.params.subscribe((params: any) => {
-      // this.userDetail(params?.id);
-      console.log(params?.id)
-      this.getUser(params?.id)
-    });
+    // this.router.params.subscribe((params: any) => {
+    //   // this.userDetail(params?.id);
+    //   console.log(params?.id)
+    //   this.getUser(params?.id)
+    // });
+    userData.User().subscribe((data:any)=>this.User=data)
+
   }
   ngOnInit(): void {
     

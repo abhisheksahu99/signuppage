@@ -1,8 +1,33 @@
-<ul >
+<div class="header id col-12">
+    <button class="si col-1" [routerLink]="['/list/']">&laquo;</button>  
+    <div class="col-6"><h1>{{users?.username}}</h1>
+    </div>
+    <div class="nav ">
+        <input class="box col-2" type="text" placeholder="Enabled">
+        <input class="bi box col-1" type="text" placeholder="Edit">
+        <input class="box col-4" type="text" placeholder="Change password">
+        <input class="box col-3" type="text" placeholder="Order wash">
+    </div>
+
+</div>
+<br>
+<div class="header id2 col-12">
+    <div class="col-6">
+        <ol>id :{{users?.id}}</ol>
+        <ol>name :{{users?.name}}</ol>
+        <ol>Mobile Number :{{users?.phone}}</ol>
+        <ol>username:{{users?.username}}</ol>
+    </div>
+    <div class="col-6">
+        <ol>Email :{{users?.email}}</ol>
+        <ol>website :{{users?.website}}</ol>
+        <ol>type :{{users?.suite}}</ol>
+    </div>
+</div>
+<!-- <ul >
     <li>Id :{{users?.id}}</li>
     <li>Name :{{users?.name}}</li>
     <li>User Name :{{users?.username}}</li>
     <li>Email :{{users?.email}}</li>
     <li>Phone :{{users?.phone}}</li>
-</ul>
-<!-- <app-header></app-header> -->
+</ul> -->
