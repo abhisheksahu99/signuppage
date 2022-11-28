@@ -2,41 +2,84 @@
     <h3>Create Your Account</h3>
     <div class="col-md-5">
       <label for="inputname" class="form-label">First Name <span style="color: red;">*</span></label>
-      <input type="text" class="form-control" id="first" placeholder="Enter first name" formControlName="first">
-      <div *ngIf="(form.first.dirty || form.first.touched)" class="invalid-feedback">
-        <h1>hello</h1>
-        <div *ngIf="form.first.errors?.['required']">
+      <input type="text" class="form-control" id="" placeholder="Enter first name" formControlName="first">
+      <div style="color: red;" *ngIf="(formvalid.controls['first'].dirty || formvalid.controls['first'].touched)" class="">
+        <div *ngIf="formvalid.controls.first.errors?.['required']">
           This field is required.
         </div>
-        <div *ngIf="form.first.errors?.['minlength']">
-          This field must have at least 1 character.
+        <div *ngIf="formvalid.controls.first.errors?.['minlength']">
+          This field must have at least 2 character.
         </div>
-        <div *ngIf="form.first.errors?.['maxlength']">
-          This field must have at most 250 characters.
+        <div *ngIf="formvalid.controls.first.errors?.['pattern']">
+          Field characters must be alphabetic
         </div>
       </div>
       </div>
     <div class="col-md-5">
       <label for="inputlastname" class="form-label">Last Name <span style="color: red;">*</span></label>
       <input type="text" class="form-control" id="inputlastname" placeholder="Enter last name" formControlName="last">
-      <span style="color: red;" *ngIf="last && last.touched && last.dirty && last.invalid">Last name is requried</span>
-    </div>
+      <!-- <span style="color: red;" *ngIf="last && last.touched && last.dirty && last.invalid">Last name is requried</span> -->
+      <div style="color: red;" *ngIf="(formvalid.controls['last'].dirty || formvalid.controls['last'].touched)" class="">
+        <div *ngIf="formvalid.controls.last.errors?.['required']">
+          Please enter your Name.
+        </div>
+        <div *ngIf="formvalid.controls.last.errors?.['minlength']">
+          This field must have at least 2 character.
+        </div>
+        <div *ngIf="formvalid.controls.last.errors?.['pattern']">
+          Field characters must be alphabetic
+        </div>
+      </div>
+      </div>
     <div class="col-10">
       <label for="inputNumber" class="form-label">Contact number <span style="color: red;">*</span></label>
       <input type="contact" class="form-control" id="inputNumber" placeholder="e.g+32 484766130" formControlName="contact">
-      <span style="color: red;" *ngIf="contact && contact.touched && contact.dirty &&contact.invalid">Please enter phone number</span>
-
-    </div>
+      <!-- <span style="color: red;" *ngIf="contact && contact.touched && contact.dirty &&contact.invalid">Please enter phone number</span> -->
+       <div style="color: red;" *ngIf="(formvalid.controls['contact'].dirty || formvalid.controls['contact'].touched)" class="">
+        <div *ngIf="formvalid.controls.contact.errors?.['required']">
+          Please complete this mandatory field.
+        </div>
+        <div *ngIf="formvalid.controls.contact.errors?.['minlength']">
+          This field must have at least 10 Number.
+        </div>
+        <div *ngIf="formvalid.controls.contact.errors?.['pattern']">
+          Field characters must be number
+        </div>
+      </div>
+      </div>
     <div class="col-10">
       <label for="inputEmail" class="form-label">Email ID <span style="color: red;">*</span></label>
       <input type="email" class="form-control" id="inputEmail" placeholder="Enter email here" formControlName="email">
-      <span style="color: red;" *ngIf="email && email.touched && email.dirty && email.invalid ">Enter correct email</span>
-
+      <!-- <span style="color: red;" *ngIf="email && email.touched && email.dirty && email.invalid ">Enter correct email</span> -->
+      <div style="color: red;" *ngIf="(formvalid.controls['email'].dirty || formvalid.controls['email'].touched)" class="">
+        <div *ngIf="formvalid.controls.email.errors?.['required']">
+          Please complete this mandatory field.
+        </div>
+        <div *ngIf="formvalid.controls.email.errors?.['minlength']">
+          This field must have at least 10 Number.
+        </div>
+        <div *ngIf="formvalid.controls.email.errors?.['pattern']">
+          Please enter your email address in format:
+          yourname@email.com
+        </div>
+      </div>
     </div>
     <div class="col-10">
         <label for="inputPassword" class="form-label">Password <span style="color: red;">*</span></label>
         <input type="password" class="form-control" id="inputPassword" placeholder="Enter password here" formControlName="password">
-       <span style="color: red;" *ngIf="password && password.dirty && password.touched && password.invalid">password should be atleast 6 character</span>
+       <!-- <span style="color: red;" *ngIf="password && password.dirty && password.touched && password.invalid">password should be atleast 6 character</span> -->
+       <div style="color: red;" *ngIf="(formvalid.controls['password'].dirty || formvalid.controls['password'].touched)" class="">
+        <div *ngIf="formvalid.controls.password.errors?.['required']">
+          Please complete this mandatory field.
+        </div>
+        <div *ngIf="formvalid.controls.password.errors?.['minlength']">
+          this field must have at least 6 characters.
+        </div>
+        <div *ngIf="formvalid.controls.password.errors?.['pattern']">
+          Please enter your email address in format:
+          yourname@email.com
+        </div>
+      </div>
       </div>
     <!-- <div class="col-12">
       <div class="form-check">

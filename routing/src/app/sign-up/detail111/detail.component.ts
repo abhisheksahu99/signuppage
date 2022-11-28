@@ -14,13 +14,15 @@ export class DetailComponent implements OnInit {
   User:any;
   constructor(private userData:UserDataService,private router:ActivatedRoute)
   {
-    // this.router.params.subscribe((params: any) => {
-    //   // this.userDetail(params?.id);
-    //   console.log(params?.id)
-    //   this.getUser(params?.id)
-    // });
-    userData.User().subscribe((data:any)=>this.User=data)
-
+    this.router.params.subscribe((params: any) => {
+      // this.userDetail(params?.id);
+      console.log(params?.id)
+      this.getUser(params?.id)
+    });
+    // this.userData.User().subscribe((data:any)=>{
+    //   console.log("data",data)
+    //   this.User=data
+    // })
   }
   ngOnInit(): void {
     

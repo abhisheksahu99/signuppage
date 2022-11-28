@@ -13,13 +13,21 @@ export class UserLoginComponent implements OnInit {
   ['requried']=true;
   myId: string | null | undefined;
   formvalid = new FormGroup ({
-    first:new FormControl('',[Validators.required,Validators.minLength(6),Validators.max(15),Validators.pattern('[a-z A-Z]+$')]),
-    last:new FormControl('',[Validators.required,Validators.min(2),Validators.maxLength(20),Validators.pattern('[a-zA-Z @.]+$')]),
-    contact:new FormControl('',[Validators.required,Validators.pattern('[0-9]+$'),Validators.maxLength(10)]),
+    first:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(15),Validators.pattern('[A-z ]+$')]),
+    last:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(20),Validators.pattern('[a-zA-Z @.]+$')]),
+    contact:new FormControl('',[Validators.required,Validators.pattern('[0-9]+$'),Validators.minLength(10)]),
     email:new FormControl('',[Validators.required,Validators.email,Validators.pattern('[a-zA-Z @.]+$') ]),
-    password:new FormControl('',[Validators.required,Validators.maxLength(18),Validators.minLength(2),Validators.pattern('[a-zA-Z @ 0-9 ]+$'),]),
+    password:new FormControl('',[Validators.required,Validators.maxLength(18),Validators.minLength(6),Validators.pattern('[a-zA-Z @ 0-9 ]+$'),]),
 
   })
+// variable - default false
+show: boolean = false;
+
+
+// click event function toggle
+password1() {
+    this.show = !this.show;
+}
 
  constructor() {
    // alert('valid form ')

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-list',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
   userData: any;
-  users: any;
+  users: any[]=[]
 
-  constructor() { }
+  constructor(private userDataService:UserDataService) { }
 
   ngOnInit(): void {
+    this.getUser()
   }
-  getUser(id:number|null|any): void{
-    this.userData.getUser(id).subscribe((data: any)=>{
+
+  getUser(): void{
+    this.userDataService.getAllUsers().subscribe((data: any)=>{
       console.warn("data",data);
       this.users=data
     })
